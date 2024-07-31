@@ -58,19 +58,7 @@ fn main() {
             let mut content = String::new();
             content_object.read_to_string(&mut content).expect("Invalid content file");
 
-            let size = match content.split_once(" ") {
-                Some(("blob", size)) =>{
-                    size
-                },
-                _ => {
-                    panic!("invalid content");
-                }
-            };
-
-            let content = match content.split_once("\0") {
-                Some((size, content)) => content,
-                _ => panic!("invalid content")
-            };
+            let content = content.split_once("\0").expect("Invalid content").1;
 
             let stdout = std::io::stdout();
             let mut stdout = stdout.lock();
