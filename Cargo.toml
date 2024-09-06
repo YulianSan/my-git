@@ -10,6 +10,10 @@ version = "0.1.0"
 authors = ["Codecrafters <hello@codecrafters.io>"]
 edition = "2021"
 
+[lib]
+name = "sangit"
+path = "src/lib.rs"
+
 [rust]
 debug = true
 debuginfo-level = 2
@@ -24,3 +28,4 @@ sha1 = "0.10.1"                                                    # hashing
 hex = "0.4.3"                                                      # working with hash output
 anyhow = "1.0.59"                                                  # error handling
 thiserror = "1.0.32"                                               # error handling
+tempfile = "3.12.0"
